@@ -9,8 +9,6 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-from reviews.models import Category, Genre, Review, Title, User
-
 from api.filters import TitleFilter
 from api.permissions import AuthorOrReadOnly, IsAdmin, ReadOnly
 from api.serializers import (CategorySerializer, CommentsSerializer,
@@ -18,6 +16,7 @@ from api.serializers import (CategorySerializer, CommentsSerializer,
                              SignUpSerializer, TitleCreateSerializer,
                              TitleSerializer, TokenSerializer,
                              UserMeSerializer, UserSerializer)
+from reviews.models import Category, Genre, Review, Title, User
 
 
 class UserViewSet(viewsets.ModelViewSet):
