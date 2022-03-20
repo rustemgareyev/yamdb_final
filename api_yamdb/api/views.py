@@ -1,5 +1,12 @@
 import uuid
 
+from api.filters import TitleFilter
+from api.permissions import AuthorOrReadOnly, IsAdmin, ReadOnly
+from api.serializers import (CategorySerializer, CommentsSerializer,
+                             GenreSerializer, ReviewSerializer,
+                             SignUpSerializer, TitleCreateSerializer,
+                             TitleSerializer, TokenSerializer,
+                             UserMeSerializer, UserSerializer)
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.shortcuts import get_object_or_404
@@ -9,13 +16,6 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-from api.filters import TitleFilter
-from api.permissions import AuthorOrReadOnly, IsAdmin, ReadOnly
-from api.serializers import (CategorySerializer, CommentsSerializer,
-                             GenreSerializer, ReviewSerializer,
-                             SignUpSerializer, TitleCreateSerializer,
-                             TitleSerializer, TokenSerializer,
-                             UserMeSerializer, UserSerializer)
 from reviews.models import Category, Genre, Review, Title, User
 
 
