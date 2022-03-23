@@ -44,7 +44,7 @@ jobs:
         with:
           file: api_yamdb/Dockerfile
           push: true
-          tags: rustemgareev/api_yamdb:latest
+          tags: rustemgareev/api_yamdb:v1.1
 
   deploy:
     runs-on: ubuntu-latest
@@ -60,15 +60,15 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           sudo docker-compose stop
-            sudo docker-compose rm web
-            touch .env
-            echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
-            echo DB_NAME=${{ secrets.DB_NAME }} >> .env
-            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
-            echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
-            echo DB_HOST=${{ secrets.DB_HOST }} >> .env
-            echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            sudo docker-compose up -d
+          sudo docker-compose rm web
+          touch .env
+          echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
+          echo DB_NAME=${{ secrets.DB_NAME }} >> .env
+          echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
+          echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+          echo DB_HOST=${{ secrets.DB_HOST }} >> .env
+          echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+          sudo docker-compose up -d
 
   send_message:
     runs-on: ubuntu-latest
