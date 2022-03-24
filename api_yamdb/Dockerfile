@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY api_yamdb/requirements.txt /app
 
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
 
-RUN pip install -r /app/requirements.txt --no-cache-dir
+RUN pip3 install -r /app/requirements.txt --no-cache-dir
 
 COPY ./ /app
 
-CMD ["sudo", "gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ] 
+CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000"] 
