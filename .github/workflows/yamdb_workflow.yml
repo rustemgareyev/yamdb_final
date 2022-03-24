@@ -44,7 +44,7 @@ jobs:
         with:
           file: api_yamdb/Dockerfile
           push: true
-          tags: rustemgareev/api_yamdb:v1.1
+          tags: rustemgareev/api_yamdb:v1.2
 
   deploy:
     runs-on: ubuntu-latest
@@ -59,7 +59,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker pull rustemgareev/api_yamdb:v1.1
+          sudo docker pull rustemgareev/api_yamdb:v1.2
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
