@@ -42,7 +42,6 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: api_yamdb
           file: api_yamdb/Dockerfile
           push: true
           tags: rustemgareev/api_yamdb:v1.1
@@ -60,6 +59,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
+          sudo docker pull rustemgareev/api_yamdb:v1.1
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
