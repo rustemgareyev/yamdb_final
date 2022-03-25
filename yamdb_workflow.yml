@@ -45,10 +45,6 @@ jobs:
           push: true
           tags: rustemgareev/api_yamdb:v1.2
           context: api_yamdb
-<<<<<<< HEAD
-          file: api_yamdb/Dockerfile
-=======
->>>>>>> 0fb6a612c296e4d6948cc7df45fa311f09308862
 
   deploy:
     runs-on: ubuntu-latest
@@ -84,8 +80,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-<<<<<<< HEAD
         message: ${{ github.workflow }} успешно выполнен!
-=======
-        message: ${{ github.workflow }} успешно выполнен!
->>>>>>> 0fb6a612c296e4d6948cc7df45fa311f09308862
