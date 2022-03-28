@@ -24,4 +24,4 @@ Yamdb_final это учебный проект, в котором реализо
 
 
 ### Статус workflow
-![example workflow](https://github.com/rustemgareyev/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![yamdb_final](https://github.com/rustemgareyev/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
